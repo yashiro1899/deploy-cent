@@ -27,10 +27,14 @@ Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentO
 9. `service mysqld start`
 10. `mysqladmin -u root password '...'`
 
-    CREATE USER 'django'@'localhost' IDENTIFIED BY '...';
-    CREATE DATABASE `django` CHARACTER SET utf8 COLLATE utf8_general_ci;
-    GRANT ALL ON `django`.* TO `django`;
-    FLUSH PRIVILEGES;
+
+```
+CREATE USER 'django'@'localhost' IDENTIFIED BY '...';
+CREATE DATABASE `django` CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL ON `django`.* TO `django`;
+FLUSH PRIVILEGES;
+```
+
 
 ### pip
 11. `curl -O https://pypi.python.org/packages/source/s/setuptools/setuptools-1.3.2.tar.gz`
@@ -54,16 +58,20 @@ Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentO
 25. `yum install python-devel mysql-devel` for next
 26. `pip install MYSQL-python`
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'django',
-            'USER': 'django',
-            'PASSWORD': '...',
-            'HOST': '/var/lib/mysql/mysql.sock',
-            'PORT': '',    # Set to empty string for default.
-        }
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': '...',
+        'HOST': '/var/lib/mysql/mysql.sock',
+        'PORT': '',    # Set to empty string for default.
     }
+}
+```
+
 
 27. ``
 28. ``

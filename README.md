@@ -3,7 +3,7 @@ deploy-cent
 
 Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentOS
 
-## [Configuring Network in CentOS Virtual Box](http://extr3metech.wordpress.com/2013/05/23/configuring-network-in-centos-6-3-virtual-box-screenshots/)
+### [Configuring Network in CentOS Virtual Box](http://extr3metech.wordpress.com/2013/05/23/configuring-network-in-centos-6-3-virtual-box-screenshots/)
 
     [root@cent ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
     DEVICE=eth0
@@ -18,7 +18,12 @@ Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentO
 2. `yum groupinstall "Development Tools"`
 3. `yum install man`
 4. `git clone https://github.com/yashiro1899/deploy-cent.git && cd deploy-cent`
+5. `cp Nginx.repo /etc/yum.repos.d/`
+6. `yum update`
 
-## MySQL
-5. `yum install mysql`
+### MySQL
+7. `yum install mysql-server`
+8. `chkconfig mysqld on`
+9. `service mysqld start`
+10. `mysqladmin -u root password 'new-password'`
 

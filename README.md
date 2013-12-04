@@ -40,5 +40,102 @@ Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentO
 15. `curl -O https://pypi.python.org/packages/source/p/pip/pip-1.4.1.tar.gz`
 16. `tar xzvf pip-1.4.1.tar.gz && cd pip-1.4.1`
 17. `python setup.py install --force --verbose`
-18. `cd ..`
+
+### Virtualenv
+18. `pip install virtualenv`
+19. `mkdir /webapps && cd /webapps`
+20. `virtualenv django`
+21. `cd django && source bin/activate`
+
+### Django
+22. `pip install django`
+23. `django-admin.py startproject taobao && cd taobao`
+24. `python manage.py runserver` for test
+25. `yum install python-devel mysql-devel` for next
+26. `pip install MYSQL-python`
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django',
+            'USER': 'django',
+            'PASSWORD': '...',
+            'HOST': '/var/lib/mysql/mysql.sock',
+            'PORT': '',    # Set to empty string for default.
+        }
+    }
+
+27. ``
+28. ``
+29. ``
+30. ``
+31. ``
+32. ``
+33. ``
+34. ``
+35. ``
+36. ``
+37. ``
+38. ``
+39. ``
+40. ``
+41. ``
+42. ``
+43. ``
+44. ``
+45. ``
+46. ``
+47. ``
+48. ``
+49. ``
+50. ``
+51. ``
+52. ``
+53. ``
+54. ``
+55. ``
+56. ``
+57. ``
+58. ``
+59. ``
+60. ``
+61. ``
+62. ``
+63. ``
+64. ``
+65. ``
+66. ``
+67. ``
+68. ``
+69. ``
+70. ``
+71. ``
+72. ``
+73. ``
+74. ``
+75. ``
+76. ``
+77. ``
+78. ``
+79. ``
+80. ``
+81. ``
+82. ``
+83. ``
+84. ``
+85. ``
+86. ``
+87. ``
+88. ``
+89. ``
+90. ``
+91. ``
+92. ``
+93. ``
+94. ``
+95. ``
+96. ``
+97. ``
+98. ``
+99. ``
 

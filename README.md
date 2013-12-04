@@ -25,5 +25,20 @@ Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentO
 7. `yum install mysql-server`
 8. `chkconfig mysqld on`
 9. `service mysqld start`
-10. `mysqladmin -u root password 'new-password'`
+10. `mysqladmin -u root password '...'`
+
+    CREATE USER 'django'@'localhost' IDENTIFIED BY '...';
+    CREATE DATABASE `django` CHARACTER SET utf8 COLLATE utf8_general_ci;
+    GRANT ALL ON `django`.* TO `django`;
+    FLUSH PRIVILEGES;
+
+### pip
+11. `curl -O https://pypi.python.org/packages/source/s/setuptools/setuptools-1.3.2.tar.gz`
+12. `tar xzvf setuptools-1.3.2.tar.gz && cd setuptools-1.3.2`
+13. `python setup.py install --force --verbose`
+14. `cd ..`
+15. `curl -O https://pypi.python.org/packages/source/p/pip/pip-1.4.1.tar.gz`
+16. `tar xzvf pip-1.4.1.tar.gz && cd pip-1.4.1`
+17. `python setup.py install --force --verbose`
+18. `cd ..`
 

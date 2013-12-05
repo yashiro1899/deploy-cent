@@ -57,6 +57,7 @@ FLUSH PRIVILEGES;
 24. `python manage.py runserver` for test
 25. `yum install python-devel mysql-devel` for next
 26. `pip install MYSQL-python`
+27. `python manage.py syncdb`
 
 
 ```
@@ -73,12 +74,14 @@ DATABASES = {
 ```
 
 
-27. ``
-28. ``
-29. ``
-30. ``
-31. ``
-32. ``
+### Application user
+28. `groupadd --system webapps`
+29. `useradd --system --gid webapps --home /webapps/django django`
+
+### Gunicorn
+30. `pip install gunicorn`
+31. `gunicorn taobao.wsgi:application` for test
+32. `cp /root/deploy-cent/gunicorn_start.bash ../bin/`
 33. ``
 34. ``
 35. ``

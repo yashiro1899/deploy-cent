@@ -83,16 +83,16 @@ DATABASES = {
 31. `pip install gunicorn`
 32. `gunicorn taobao.wsgi:application` for test
 33. `cp /root/deploy-cent/gunicorn_start.bash ../bin/`
-34. `chown -R taobao:users /webapps/django`
-35. `chmod -R g+w /webapps/django`
-36. `pip install setproctitle`
+34. `pip install setproctitle`
 
 ### Supervisor
-37. `deactivate`
-38. `pip install supervisor`
-39. `mkdir -p /etc/supervisor/conf.d`
-40. `cp /root/deploy-cent/taobao.supervisor.conf /etc/supervisor/conf.d/taobao.conf`
-41. `mkdir /webapps/django/logs/`
+35. `deactivate`
+36. `pip install supervisor`
+37. `mkdir -p /etc/supervisor/conf.d`
+38. `cp /root/deploy-cent/taobao.supervisor.conf /etc/supervisor/conf.d/taobao.conf`
+39. `mkdir /webapps/django/logs/`
+40. `chown -R django:users /webapps/django`
+41. `chmod -R g+w /webapps/django`
 42. `echo_supervisord_conf > /etc/supervisor/supervisord.conf`
 43. `vi /etc/sysconfig/iptables` open the port 9001
 44. `service iptables restart`

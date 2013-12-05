@@ -91,64 +91,23 @@ DATABASES = {
 37. `deactivate`
 38. `pip install supervisor`
 39. `mkdir -p /etc/supervisor/conf.d`
-40. `cp /root/deploy-cent/taobao.conf /etc/supervisor/conf.d/`
+40. `cp /root/deploy-cent/taobao.supervisor.conf /etc/supervisor/conf.d/taobao.conf`
 41. `mkdir /webapps/django/logs/`
 42. `echo_supervisord_conf > /etc/supervisor/supervisord.conf`
-43. ``
-44. ``
-45. ``
-46. ``
-47. ``
-48. ``
-49. ``
-50. ``
-51. ``
-52. ``
-53. ``
-54. ``
-55. ``
-56. ``
-57. ``
-58. ``
-59. ``
-60. ``
-61. ``
-62. ``
-63. ``
-64. ``
-65. ``
-66. ``
-67. ``
-68. ``
-69. ``
-70. ``
-71. ``
-72. ``
-73. ``
-74. ``
-75. ``
-76. ``
-77. ``
-78. ``
-79. ``
-80. ``
-81. ``
-82. ``
-83. ``
-84. ``
-85. ``
-86. ``
-87. ``
-88. ``
-89. ``
-90. ``
-91. ``
-92. ``
-93. ``
-94. ``
-95. ``
-96. ``
-97. ``
-98. ``
-99. ``
+43. `vi /etc/sysconfig/iptables` open the port 9001
+44. `service iptables restart`
+45. `chkconfig --add supervisord`
+46. `cp /root/deploy-cent/supervisord /etc/init.d/` from [prototype](https://raw.github.com/Supervisor/initscripts/master/redhat-init-mingalevme)
+47. `chmod a+x /etc/init.d/supervisord`
+48. `chkconfig supervisord on`
+
+### Nginx
+49. `yum install nginx`
+50. `service nginx start`
+51. `cp /root/deploy-cent/taobao.nginx.conf /etc/nginx/conf.d/taobao.conf`
+52. `service nginx restart`
+53. `vi /etc/sysconfig/iptables` open the port 80
+54. `service iptables restart`
+
+Done!
 

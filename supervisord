@@ -65,7 +65,9 @@ stop() {
         echo "Waiting roughly 60 seconds for $PIDFILE to be removed after child processes exit"
         for sleep in  2 2 2 2 4 4 4 4 8 8 8 8 last; do
             if [ ! -e $PIDFILE ] ; then
-                echo "Supervisord exited as expected in under $total_sleep seconds"
+                if [ $total_sleep != "" ]; then
+                    echo "Supervisord exited as expected in under $total_sleep seconds"
+                fi
                 break
             else
                 if [[ $sleep -eq "last" ]] ; then

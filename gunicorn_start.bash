@@ -3,7 +3,7 @@
 NAME="taobao_app"                          # Name of the application
 DJANGODIR=/webapps/django/taobao           # Django project directory
 SOCKFILE=/webapps/django/run/gunicorn.sock # we will communicte using this unix socket
-USER=taobao                                # the user to run as
+USER=django                                # the user to run as
 GROUP=webapps                              # the group to run as
 NUM_WORKERS=3                              # how many worker processes should Gunicorn spawn
 DJANGO_SETTINGS_MODULE=taobao.settings     # which settings file should Django use

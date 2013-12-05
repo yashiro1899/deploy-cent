@@ -1,7 +1,7 @@
 deploy-cent
 ===========
 
-Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentOS
+[Deploying Django with Nginx, Gunicorn, Virtualenv, Supervisor and MySQL on CentOS](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/)
 
 ### [Configuring Network in CentOS Virtual Box](http://extr3metech.wordpress.com/2013/05/23/configuring-network-in-centos-6-3-virtual-box-screenshots/)
 
@@ -77,21 +77,23 @@ DATABASES = {
 ### Application user
 28. `groupadd --system webapps`
 29. `useradd --system --gid webapps --home /webapps/django django`
+30. `usermod -a -G users ice`
 
 ### Gunicorn
-30. `pip install gunicorn`
-31. `gunicorn taobao.wsgi:application` for test
-32. `cp /root/deploy-cent/gunicorn_start.bash ../bin/`
-33. ``
-34. ``
-35. ``
-36. ``
-37. ``
-38. ``
-39. ``
-40. ``
-41. ``
-42. ``
+31. `pip install gunicorn`
+32. `gunicorn taobao.wsgi:application` for test
+33. `cp /root/deploy-cent/gunicorn_start.bash ../bin/`
+34. `chown -R taobao:users /webapps/django`
+35. `chmod -R g+w /webapps/django`
+36. `pip install setproctitle`
+
+### Supervisor
+37. `deactivate`
+38. `pip install supervisor`
+39. `mkdir -p /etc/supervisor/conf.d`
+40. `cp /root/deploy-cent/taobao.conf /etc/supervisor/conf.d/`
+41. `mkdir /webapps/django/logs/`
+42. `echo_supervisord_conf > /etc/supervisor/supervisord.conf`
 43. ``
 44. ``
 45. ``

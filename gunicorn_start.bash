@@ -1,13 +1,13 @@
 #!/bin/bash
 
-NAME="taobao_app"                          # Name of the application
-DJANGODIR=/webapps/django/taobao           # Django project directory
+NAME="chasing_ice"                         # Name of the application
+DJANGODIR=/webapps/django/chasingice       # Django project directory
 SOCKFILE=/webapps/django/run/gunicorn.sock # we will communicte using this unix socket
 USER=django                                # the user to run as
 GROUP=webapps                              # the group to run as
 NUM_WORKERS=3                              # how many worker processes should Gunicorn spawn
-DJANGO_SETTINGS_MODULE=taobao.settings     # which settings file should Django use
-DJANGO_WSGI_MODULE=taobao.wsgi             # WSGI module name
+DJANGO_SETTINGS_MODULE=chasingice.settings # which settings file should Django use
+DJANGO_WSGI_MODULE=chasingice.wsgi         # WSGI module name
 
 echo "Starting $NAME as `whoami`"
 

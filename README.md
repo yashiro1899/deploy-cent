@@ -18,7 +18,7 @@ deploy-cent
 2. `yum groupinstall "Development Tools"`
 3. `yum install man`
 4. `git clone https://github.com/yashiro1899/deploy-cent.git && cd deploy-cent`
-5. `cp Nginx.repo /etc/yum.repos.d/`
+5. `rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
 6. `yum update`
 
 ### MySQL

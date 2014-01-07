@@ -31,7 +31,7 @@ deploy-cent
 ```
 CREATE USER 'django'@'localhost' IDENTIFIED BY '...';
 CREATE DATABASE `django` CHARACTER SET utf8 COLLATE utf8_general_ci;
-GRANT ALL ON `django`.* TO `django`;
+GRANT ALL ON `django`.* TO `django`@`localhost`;
 FLUSH PRIVILEGES;
 ```
 

@@ -111,3 +111,10 @@ DATABASES = {
 
 Done!
 
+```sh
+curl -O ftp://ftp.icm.edu.pl/vol/rzm6/linux-scientificlinux/7.4/x86_64/os/Packages/python-rhsm-certificates-1.19.10-1.el7.x86_64.rpm
+rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | \
+  cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | \
+  tee /etc/rhsm/ca/redhat-uep.pem
+restorecon -Rv ~/.ssh
+```
